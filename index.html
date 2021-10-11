@@ -11,6 +11,24 @@
     <![endif]-->
   </head>
   <body>
-		IOK
+<div id="igle"></div>
   </body>
+<script> 
+async function load_church(){
+try{
+console.log("before cgurchx")
+data = await aws_churchs()
+document.getElementById("igle").innerHTML = data
+}
+catch(err){
+console.log("LOOK " + err)
+}
+}
+function aws_churchs(){
+return fetch("https://a9qhsrrmk6.execute-api.us-east-2.amazonaws.com/default/enviarEncuesta")
+       .then(resp => resp.json())
+       .then(json => json)
+}
+ load_church();
+</script> 
 </html>
