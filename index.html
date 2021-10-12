@@ -18,6 +18,7 @@ async function load_church(){
 try{
 console.log("before cgurchx")
 data = await aws_churchs()
+console.log("EPA")
 document.getElementById("igle").innerHTML = data
 }
 catch(err){
@@ -25,9 +26,16 @@ console.log("LOOK " + err)
 }
 }
 function aws_churchs(){
-return fetch("https://a9qhsrrmk6.execute-api.us-east-2.amazonaws.com/default/enviarEncuesta")
-       .then(resp => resp.json())
-       .then(json => json)
+return fetch("https://ak4g9hn5sk.execute-api.us-east-2.amazonaws.com/default/enviarEncuesta"
+        /*,{
+        method : 'GET',
+        headers: {
+        'Content-Type': 'application/json',
+         'Access-Control-Allow-Origin': '*'
+        } 
+        } */
+        ).then(resp => resp.json())
+         .then(json => json)
 }
  load_church();
 </script> 
