@@ -15,11 +15,14 @@
   </body>
 <script> 
 async function load_church(){
+yup=""
 try{
-console.log("before cgurchx")
 data = await aws_churchs()
-console.log(data)
-document.getElementById("igle").innerHTML = data["data"]
+data['data'].forEach(zz => {
+yup += zz["nombre"] + " / ";
+
+})
+document.getElementById("igle").innerHTML = yup;
 }
 catch(err){
 console.log("LOOK " + err)
