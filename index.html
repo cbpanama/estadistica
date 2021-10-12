@@ -18,8 +18,8 @@ async function load_church(){
 try{
 console.log("before cgurchx")
 data = await aws_churchs()
-console.log("EPA")
-document.getElementById("igle").innerHTML = data
+console.log(data)
+document.getElementById("igle").innerHTML = data["data"]
 }
 catch(err){
 console.log("LOOK " + err)
